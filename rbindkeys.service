@@ -1,0 +1,12 @@
+[Unit]
+Description=rbindkeys
+
+[Service]
+ExecStart=/home/yuki/.rbenv/versions/1.9.3-p551/bin/rbindkeys /dev/input/event4 -c /home/yuki/.rbindkeys.rb $OPTIONS
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+Type=simple
+Environment=DISPLAY=:0.0
+
+[Install]
+WantedBy=graphical.target
