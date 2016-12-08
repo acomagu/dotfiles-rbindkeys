@@ -52,7 +52,6 @@ def push_key key
   operator.press_key key
   operator.pressing_key key
   operator.release_key key if using_ime?
-  # operator.release_key key
 end
 
 def push_keys keys
@@ -75,7 +74,6 @@ def using_ime?
 end
 
 def bind_ime_with_thumb tkey, lkey, rkey
-  # rkey = dvorak_to_qwerty(rkey)
   bind_ime [tkey, lkey], rkey
   bind_ime [lkey, tkey], rkey do |event, operator|
     operator.press_key KEY_BACKSPACE
@@ -93,20 +91,6 @@ end
 
 bind_ime KEY_MUHENKAN, []
 bind_ime KEY_HENKAN, []
-
-# bind_key [KEY_LEFTCTRL, KEY_LEFTALT, KEY_J], [KEY_LEFTCTRL, KEY_LEFTALT, KEY_LEFT]
-# bind_key [KEY_LEFTCTRL, KEY_LEFTALT, KEY_C], [KEY_LEFTCTRL, KEY_LEFTALT, KEY_DOWN]
-# bind_key [KEY_LEFTCTRL, KEY_LEFTALT, KEY_V], [KEY_LEFTCTRL, KEY_LEFTALT, KEY_UP]
-# bind_key [KEY_LEFTCTRL, KEY_LEFTALT, KEY_P], [KEY_LEFTCTRL, KEY_LEFTALT, KEY_RIGHT]
-
-# bind_key [KEY_LEFTSHIFT, KEY_LEFTALT, KEY_V], KEY_UP
-# bind_key [KEY_LEFTSHIFT, KEY_LEFTALT, KEY_P], KEY_RIGHT
-# bind_key [KEY_LEFTSHIFT, KEY_LEFTALT, KEY_C], KEY_DOWN
-# bind_key [KEY_LEFTSHIFT, KEY_LEFTALT, KEY_J], KEY_LEFT
-# bind_key [KEY_LEFTSHIFT, KEY_LEFTALT, KEY_R], KEY_UP
-# bind_key [KEY_LEFTSHIFT, KEY_LEFTALT, KEY_Y], KEY_RIGHT
-# bind_key [KEY_LEFTSHIFT, KEY_LEFTALT, KEY_L], KEY_DOWN
-# bind_key [KEY_LEFTSHIFT, KEY_LEFTALT, KEY_N], KEY_LEFT
 
 bind_key [KEY_KATAKANAHIRAGANA, KEY_V], KEY_UP
 bind_key [KEY_KATAKANAHIRAGANA, KEY_P], KEY_RIGHT
