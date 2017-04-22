@@ -6,6 +6,7 @@ require 'socket'
 pre_bind_key KEY_CAPSLOCK, KEY_LEFTCTRL
 pre_bind_key KEY_RO, KEY_RIGHTSHIFT
 bind_key [KEY_LEFTCTRL, KEY_J], KEY_BACKSPACE
+bind_key [KEY_LEFTCTRL, KEY_C], [KEY_LEFTCTRL, KEY_C] # For vim
 
 def dvorak_to_qwerty keys
   def convert_key key
